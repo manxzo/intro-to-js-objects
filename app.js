@@ -1,22 +1,22 @@
-const pokemon = require('./data.js');
+const pokemon = require("./data.js");
 const game = {
-    party: [],
-    gyms: [
-      { location: "Pewter City", completed: false, difficulty: 1 },
-      { location: "Cerulean City", completed: false, difficulty: 2 },
-      { location: "Vermilion City", completed: false, difficulty: 3 },
-      { location: "Celadon City", completed: false, difficulty: 4 },
-      { location: "Fuchsia City", completed: false, difficulty: 5 },
-      { location: "Saffron City", completed: false, difficulty: 6 },
-      { location: "Cinnabar Island", completed: false, difficulty: 7 },
-      { location: "Viridian City", completed: false, difficulty: 8 },
-    ],
-    items: [
-      { name: "potion", quantity: 4 },
-      { name: "pokeball", quantity: 8 },
-      { name: "rare candy", quantity: 99 },
-    ],
-  }
+  party: [],
+  gyms: [
+    { location: "Pewter City", completed: false, difficulty: 1 },
+    { location: "Cerulean City", completed: false, difficulty: 2 },
+    { location: "Vermilion City", completed: false, difficulty: 3 },
+    { location: "Celadon City", completed: false, difficulty: 4 },
+    { location: "Fuchsia City", completed: false, difficulty: 5 },
+    { location: "Saffron City", completed: false, difficulty: 6 },
+    { location: "Cinnabar Island", completed: false, difficulty: 7 },
+    { location: "Viridian City", completed: false, difficulty: 8 },
+  ],
+  items: [
+    { name: "potion", quantity: 4 },
+    { name: "pokeball", quantity: 8 },
+    { name: "rare candy", quantity: 99 },
+  ],
+};
 ///console.dir(pokemon, { maxArrayLength: null })
 ///console.log(pokemon[58])
 ///console.log(game)
@@ -29,7 +29,7 @@ Exercise 3
 
 Solve Exercise 3 here:
 */
-game.difficulty = ["Easy","Med","Hard"];
+game.difficulty = ["Easy", "Med", "Hard"];
 /*
 Exercise 4
 1. Select a starter Pokémon from the `pokemon` array. Remember, a starter Pokémon's `starter` property is true.
@@ -39,8 +39,8 @@ Exercise 4
 Solve Exercise 4 here:
 */
 let starterMon = [];
-for (let i=0;i<pokemon.length;i++){
-  if(pokemon[i].starter === true){
+for (let i = 0; i < pokemon.length; i++) {
+  if (pokemon[i].starter === true) {
     starterMon.push(pokemon[i]);
   }
 }
@@ -61,24 +61,27 @@ let highHpMon = [];
 let poisonMon = [];
 let legendaryMon = [];
 
-for (let i=0;i<pokemon.length;i++){
-  if(pokemon[i].hp >100){
+for (let i = 0; i < pokemon.length; i++) {
+  if (pokemon[i].hp > 100) {
     highHpMon.push(pokemon[i]);
   }
-  if (pokemon[i].type === "poison"){
+  if (pokemon[i].type === "poison") {
     poisonMon.push(pokemon[i]);
   }
-  if (pokemon[i].name === "Mewtwo" || pokemon[i].name === "Articuno" || pokemon[i].name === "Entei"){
+  if (
+    pokemon[i].name === "Mewtwo" ||
+    pokemon[i].name === "Articuno" ||
+    pokemon[i].name === "Entei"
+  ) {
     legendaryMon.push(pokemon[i]);
   }
-};
+}
 
 ///console.log(highHpMon);
 ///console.log(poisonMon);
 ///console.log(legendaryMon);
-game.party.push(highHpMon[5],poisonMon[4],legendaryMon[0]);
+game.party.push(highHpMon[5], poisonMon[4], legendaryMon[0]);
 ///console.log(game.party);
-
 
 /*
 Exercise 6
@@ -89,9 +92,9 @@ Exercise 6
 Solve Exercise 6 here:
 */
 
-for (let i=0;i<game.gyms.length;i++){
-  if (game.gyms[i].difficulty <= 3){
-    game.gyms[i].completed = true
+for (let i = 0; i < game.gyms.length; i++) {
+  if (game.gyms[i].difficulty <= 3) {
+    game.gyms[i].completed = true;
   }
 }
 
@@ -113,24 +116,23 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 
 Solve Exercise 7 here:
 */
-for(let i=0;i<game.party.length;i++){
-  if (game.party[i].starter === true){
-    if (game.party[i].number === 1){
-      game.party.splice(i,1,pokemon[1]);
+for (let i = 0; i < game.party.length; i++) {
+  if (game.party[i].starter === true) {
+    if (game.party[i].number === 1) {
+      game.party.splice(i, 1, pokemon[1]);
     }
-    if (game.party[i].number === 4){
-      game.party.splice(i,1,pokemon[4]);
+    if (game.party[i].number === 4) {
+      game.party.splice(i, 1, pokemon[4]);
     }
-    if (game.party[i].number === 7){
-      game.party.splice(i,1,pokemon[7]);
+    if (game.party[i].number === 7) {
+      game.party.splice(i, 1, pokemon[7]);
     }
-    if (game.party[i].number === 25){
-      game.party.splice(i,1,pokemon[25]);
+    if (game.party[i].number === 25) {
+      game.party.splice(i, 1, pokemon[25]);
     }
   }
 }
 ///console.log(game.party);
-
 
 /*
 Exercise 8
@@ -140,11 +142,10 @@ Exercise 8
 Solve Exercise 8 here:
 */
 partyMonNames = [];
-for (let i = 0;i<game.party.length;i++){
+for (let i = 0; i < game.party.length; i++) {
   partyMonNames.push(game.party[i].name);
 }
 ///console.log(partyMonNames);
-
 
 /*
 Exercise 9
@@ -153,7 +154,7 @@ Exercise 9
 
 
 Solve Exercise 9 here:
-*/ 
+*/
 ///Already solved this during Exercise 4 so I'll copy paste as a comment (refer to starterMon Array)
 
 /* let starterMon = [];
@@ -164,7 +165,6 @@ for (let i=0;i<pokemon.length;i++){
 } 
 console.log(starterMon);
 */
-
 
 /*
 Exercise 10
@@ -178,15 +178,14 @@ After writing this method, call it and pass in a Pokemon object of your choice f
 Solve Exercise 10 here:
 */
 
-game.catchPokemon = function(pokemonObj){
+game.catchPokemon = function (pokemonObj) {
   game.party.push(pokemonObj);
   return;
-}
+};
 
 game.catchPokemon(pokemon[14]);
 
 ///console.log(game.party);
-
 
 /*
 Exercise 11
@@ -199,27 +198,25 @@ After updating the method, call it and pass in a Pokemon object of your choice f
 Also, log the `game.items` array to confirm that the pokeball quantity is being decremented.
 
 Solve Exercise 11 here:
-*/ 
+*/
 
-game.catchPokemon = function(pokemonObj){ 
+game.catchPokemon = function (pokemonObj) {
   /*
   Ignore the if condition until as it ensures the pokeballs cannot become negative until Exercise 19
-  Focus only on lines 209 and 210 as that has all the functionality for this exercise */  
-  if (game.items[1].quantity > 0){
+  Focus only on lines 209 and 210 as that has all the functionality for this exercise */
+  if (game.items[1].quantity > 0) {
     game.party.push(pokemonObj);
     game.items[1].quantity -= 1;
     return;
-  } 
-  else{
-    console.log("You have no pokeballs left!")
+  } else {
+    console.log("You have no pokeballs left!");
     return "You have no pokeballs left!";
   }
-}
+};
 
 game.catchPokemon(pokemon[80]);
 ///console.log(game.items[1]);
 ///console.log(game.party);
-
 
 /*
 Exercise 12
@@ -229,14 +226,13 @@ Exercise 12
 Solve Exercise 12 here:
 */
 
-for (let i=0;i<game.gyms.length;i++){
-  if (game.gyms[i].difficulty <= 6){
-    game.gyms[i].completed = true
+for (let i = 0; i < game.gyms.length; i++) {
+  if (game.gyms[i].difficulty <= 6) {
+    game.gyms[i].completed = true;
   }
 }
 
 ///console.log(game.gyms);
-
 
 /*
 Exercise 13
@@ -261,21 +257,19 @@ For example, if five gym objects have a value of `true` on their `completed` pro
 Solve Exercise 13 here:
 */
 
-game.gymStatus = function(){
-  const gymTally = {completed:0 ,incomplete:0}
-  for (let i = 0;i<game.gyms.length;i++){
-    if (game.gyms[i].completed === true){
+game.gymStatus = function () {
+  const gymTally = { completed: 0, incomplete: 0 };
+  for (let i = 0; i < game.gyms.length; i++) {
+    if (game.gyms[i].completed === true) {
       gymTally.completed += 1;
-    }
-    else{
+    } else {
       gymTally.incomplete += 1;
     }
   }
   console.log(gymTally);
-}
+};
 
 ///game.gymStatus();
-
 
 /*
 Exercise 14
@@ -289,7 +283,7 @@ This method should:
 Solve Exercise 14 here:
 */
 
-game.partyCount = function(){
+game.partyCount = function () {
   return game.party.length;
 };
 
@@ -302,9 +296,9 @@ Exercise 15
 
 Solve Exercise 15 here:
 */
-for (let i=0;i<game.gyms.length;i++){
-  if (game.gyms[i].difficulty <= 8){
-    game.gyms[i].completed = true
+for (let i = 0; i < game.gyms.length; i++) {
+  if (game.gyms[i].difficulty <= 8) {
+    game.gyms[i].completed = true;
   }
 }
 /*
@@ -312,21 +306,19 @@ Reflection: I just copy paste from Exercise 6/12 and change the value of difficu
 I think I should replace this with a method that takes in one parameter the level of difficulty to change completed to true 
 and also to change to false if the difficulty level input is lower than previously set
 */
-game.setComplete = function (diff){
-  for (let i=0;i<game.gyms.length;i++){
-    if (game.gyms[i].difficulty <= diff){
+game.setComplete = function (diff) {
+  for (let i = 0; i < game.gyms.length; i++) {
+    if (game.gyms[i].difficulty <= diff) {
       game.gyms[i].completed = true;
-    }
-    else {
+    } else {
       game.gyms[i].completed = false;
-    };
+    }
   }
   return "Game has been completed to difficulty level: " + diff;
-}
+};
 
 ///game.setComplete(4);
 ///game.gymStatus();
-
 
 /*
 Exercise 16
@@ -338,7 +330,6 @@ Solve Exercise 16 here:
 
 ///console.log(game)
 
-
 /*
 Exercise 17
 1. Arrange the Pokémon in `game.party` by their HP. The one with the highest HP should come first.
@@ -348,9 +339,8 @@ Exercise 17
 Solve Exercise 17 here:
 */
 
-game.party.sort((a,b) => b.hp - a.hp); 
+game.party.sort((a, b) => b.hp - a.hp);
 ///console.log(game.party);
-
 
 /*
 ----------------------------------------------------------------------------------------------
@@ -375,8 +365,7 @@ Given the array below we can sort by 3 different ways Alphabetically,Boolean or 
   -------------------------------------------------------------------------------------------
   */
 
-
-  /*
+/*
 Exercise 18
 Add a new property to the `game` object called `collection` and initialize its value to an empty array.
 
@@ -397,27 +386,24 @@ Solve Exercise 18 here:
 
 game.collection = [];
 
-game.catchPokemon = function(pokemonObj){
-  if (game.items[1].quantity > 0 && game.party.length < 6){
+game.catchPokemon = function (pokemonObj) {
+  if (game.items[1].quantity > 0 && game.party.length < 6) {
     game.party.push(pokemonObj);
     game.items[1].quantity -= 1;
     return;
-  }
-  else if (game.items[1].quantity > 0 && game.party.length >= 6){
+  } else if (game.items[1].quantity > 0 && game.party.length >= 6) {
     game.collection.push(pokemonObj);
     game.items[1].quantity -= 1;
     console.log(`Your Party is Full! Sent ${pokemonObj.name} to Collection!`);
     return `Your Party is Full! Sent ${pokemonObj.name} to Collection!`;
-  }
-  else{
-    console.log("You have no pokeballs left!")
+  } else {
+    console.log("You have no pokeballs left!");
     return "You have no pokeballs left!";
   }
-}
+};
 
 ///console.log(game.partyCount());
 ///game.catchPokemon(pokemon[60]);
-
 
 /*
 Exercise 19
@@ -452,8 +438,6 @@ game.catchPokemon = function(pokemonObj){  -------------------> Declare Function
 }
   */
 
-
-
 /*
 Exercise 20
 Copy the `catchPokemon` method that you just wrote above, and paste it below. Modify is so that you can just pass in the name of a Pokemon instead of an entire object, and the method will look up the Pokemon from the data set for you.
@@ -465,41 +449,41 @@ If there is not a match, then return a string noting that the selected Pokemon d
 Solve Exercise 20 here:
 */
 
-game.catchPokemon = function(nameMon){
+game.catchPokemon = function (nameMon) {
   let pokemonObj = null; /// Define pokemonObj as null and use let as u need to assign a object to it later
- for (let i = 0;i<pokemon.length;i++){ /// Iterate through whole list 
-  if (nameMon.toLowerCase() === pokemon[i].name.toLowerCase()){ /// compare the strings input and pokemon.name after changing both to lowercase
-     pokemonObj = pokemon[i]; /// Assign the object that the input matches with
-   break; /// exit the loop
-  }
- } ///end the iteration
-  if (pokemonObj === null){ ///check if the pokemon wasnt found and the name wasnt changed
-   console.log("Selected Pokemon Doesn't Exist")
-   return "Selected Pokemon Doesn't Exist"
-  }
-  else{///if it was found resume the old code
-    if (game.items[1].quantity > 0 && game.party.length < 6){
+  for (let i = 0; i < pokemon.length; i++) {
+    /// Iterate through whole list
+    if (nameMon.toLowerCase() === pokemon[i].name.toLowerCase()) {
+      /// compare the strings input and pokemon.name after changing both to lowercase
+      pokemonObj = pokemon[i]; /// Assign the object that the input matches with
+      break; /// exit the loop
+    }
+  } ///end the iteration
+  if (pokemonObj === null) {
+    ///check if the pokemon wasnt found and the name wasnt changed
+    console.log("Selected Pokemon Doesn't Exist");
+    return "Selected Pokemon Doesn't Exist";
+  } else {
+    ///if it was found resume the old code
+    if (game.items[1].quantity > 0 && game.party.length < 6) {
       game.party.push(pokemonObj);
       game.items[1].quantity -= 1;
-      console.log(`${pokemonObj.name} has joined the party!`)
-    return `${pokemonObj.name} has joined the party`;
-    }
-    else if (game.items[1].quantity > 0 && game.party.length >= 6){
+      console.log(`${pokemonObj.name} has joined the party!`);
+      return `${pokemonObj.name} has joined the party`;
+    } else if (game.items[1].quantity > 0 && game.party.length >= 6) {
       game.collection.push(pokemonObj);
       game.items[1].quantity -= 1;
       console.log(`Your Party is Full! Sent ${pokemonObj.name} to Collection!`);
       return `Your Party is Full! Sent ${pokemonObj.name} to Collection!`;
-    }
-    else{
-      console.log("You have no pokeballs left!")
-    return "You have no pokeballs left!";
+    } else {
+      console.log("You have no pokeballs left!");
+      return "You have no pokeballs left!";
     }
   }
-}
+};
 
 ///game.catchPokemon("PiKacHu");
 ///game.catchPokemon("idontexist")
-
 
 /*
 Exercise 21
@@ -527,22 +511,22 @@ Log the object when it's constructed.
 Solve Exercise 21 here:
 */
 
-const sortedpokemon = {}
-const typesArray=[]
-for (i=0;i<pokemon.length;i++){
-    if (typesArray.includes(pokemon[i].type) === false ){
-      typesArray.push(pokemon[i].type)
-    }
+const sortedpokemon = {};
+const typesArray = [];
+for (i = 0; i < pokemon.length; i++) {
+  if (typesArray.includes(pokemon[i].type) === false) {
+    typesArray.push(pokemon[i].type);
   }
+}
 ///console.log(typesArray);
-for (i=0;i<typesArray.length;i++){
-  sortedpokemon[typesArray[i]] = []; 
+for (i = 0; i < typesArray.length; i++) {
+  sortedpokemon[typesArray[i]] = [];
 }
 ///console.log (sortedpokemon);
-for (i=0;i<pokemon.length;i++){
-  for (x=0;x<typesArray.length;x++){
-    if (pokemon[i].type === typesArray[x]){
-    sortedpokemon[typesArray[x]].push(pokemon[i])
+for (i = 0; i < pokemon.length; i++) {
+  for (x = 0; x < typesArray.length; x++) {
+    if (pokemon[i].type === typesArray[x]) {
+      sortedpokemon[typesArray[x]].push(pokemon[i]);
     }
   }
 }
